@@ -15,13 +15,16 @@ public class Frios extends Postre {
     @Override
      public void datos(){
         System.out.println("Nombre del postre");
-        nombre=entrada.next();
+        nombre=entrada.nextLine();
+        do{
       System.out.println("Precio del postre ");
       super.precio=entrada.nextInt();
+        }while(super.precio<1);
+        entrada.nextLine();
       System.out.println("Nota para el postre");
-      super.nota=entrada.next();
+      super.nota=entrada.nextLine();
       System.out.println("Diseño del postre");
-      super.disenio=entrada.next();
+      super.disenio=entrada.nextLine();
      
   }
 

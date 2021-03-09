@@ -12,14 +12,17 @@ public class Galleta extends Postre{
 
     @Override
     public void datos(){
+        do{
      System.out.println("Precio de la galleta");
      super.precio=entrada.nextInt();
+    }while(super.precio<1);
+    entrada.nextLine();
      System.out.println("Nota para la galleta");
-     super.nota=entrada.next();
+     super.nota=entrada.nextLine();
      System.out.println("Diseño de la galleta");
-     super.disenio=entrada.next();
+     super.disenio=entrada.nextLine();
      System.out.println("forma de la galleta");
-     forma=entrada.next();
+     forma=entrada.nextLine();
  }
 
  @Override

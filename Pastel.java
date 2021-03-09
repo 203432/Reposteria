@@ -21,16 +21,21 @@ public class Pastel extends Postre {
 
     @Override
     public void datos(){
+        do{
      System.out.println("Precio del pastel");
      super.precio=entrada.nextInt();
+        }while(super.precio<1);
+        entrada.nextLine();
      System.out.println("Nota para el pastel");
-     super.nota=entrada.next();
+     super.nota=entrada.nextLine();
      System.out.println("Diseño del pastel");
-     super.disenio=entrada.next();
+     super.disenio=entrada.nextLine();
      System.out.println("Sabor del pastel");
-     sabor=entrada.next();
+     sabor=entrada.nextLine();
+     do{
      System.out.println("Pisos del pastel");
      Pisos=entrada.nextInt();
+     }while(Pisos<1);
  }
 
 

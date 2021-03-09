@@ -51,7 +51,7 @@ pedido.setAnticipo(entrada.nextInt());
 if(pedido.getAnticipo()>pedido.getTotalPagar()){
     System.out.println("Usted esta dejando mas anticipo de lo que debe pagar, por favor deje menos anticipo");
 }
-}while(pedido.getAnticipo()>pedido.getTotalPagar());
+}while(pedido.getAnticipo()>pedido.getTotalPagar()||pedido.getAnticipo()<100);
 lista.add(pedido);
 }
 
@@ -61,8 +61,10 @@ public static void eliminarPedido(ArrayList<Pedido> lista){
     int eliminar,validar;
     if(!lista.isEmpty()){
 verPedidos(lista);
+do{
 System.out.println("Seleccione el numero del pedido que quiera eliminar");
 eliminar=entrada.nextInt();
+}while(eliminar<1||eliminar>lista.size());
 System.out.println("Estas seguro? Se perderan los datos del pedido eliminado");
 System.out.println("1-Eliminar pedido "+eliminar   +" 2-No eliminar");
 validar=entrada.nextInt();
@@ -98,9 +100,11 @@ public static void verPedidos(ArrayList<Pedido> lista){
 public static void infoPedidos(ArrayList<Pedido> lista){
     int info;
     if(!lista.isEmpty()){
+        do{
     System.out.println("Si quiere ver mas informacion sobre un pedido, escriba el numero de ese pedido");
     System.out.println("Si quiere salir, presione 0");
     info=entrada.nextInt();
+        }while(info>lista.size()||info<0);
     if(info!=0){
         lista.get(info-1).infoDetallada();
     }

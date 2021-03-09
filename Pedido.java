@@ -20,10 +20,14 @@ public class Pedido {
         nombre=entrada.next();
         System.out.println("Escriba el apellido del cliente: ");
         apellido=entrada.next();
+        do{
         System.out.println("Escriba los tres primeros numeros del telefono del cliente: ");
         lada=entrada.nextInt();
+        }while(lada<100||lada>999);
+        do{
         System.out.println("Escriba los numeros restantes del telefono: ");
         telefono=entrada.nextInt();
+        }while(telefono<1000000||telefono>9999999);
 
         datosCliente=new Cliente(nombre, apellido, lada, telefono);
     }
@@ -46,6 +50,7 @@ public class Pedido {
     
     public void registrarPostres(){
         int opcion,repetir;
+        do{
         do{
         System.out.println("Que tipo de postre se encargo?");
         System.out.println("1-----Pastel");
@@ -75,8 +80,11 @@ public class Pedido {
             postres.add(frio);
             break;
         }
+    }while(opcion<=0||opcion>4);
+    do{
 System.out.println("Quiere agregar otro postre?   1----Si   2----No");
     repetir=entrada.nextInt();
+    }while(repetir<1||repetir>2);
     }while(repetir==1);
     }
 
